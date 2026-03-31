@@ -1,0 +1,12 @@
+[config]
+SCM_DO_BUILD_DURING_DEPLOYMENT=true
+```
+
+---
+
+**Step 2 — Check if `.gitignore` is blocking `src/`:**
+
+Open `D:\Project1\backend\.gitignore` and make sure it does NOT contain `src/`. It should only have:
+```
+node_modules/
+.env
