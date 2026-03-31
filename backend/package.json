@@ -2,10 +2,10 @@
   "name": "azure-fileshare-backend",
   "version": "1.0.0",
   "description": "Backend for Azure Cloud File Upload and Sharing System",
-  "main": "src/server.js",
+  "main": "backend/src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node backend/src/server.js",
+    "dev": "nodemon backend/src/server.js"
   },
   "dependencies": {
     "@azure/identity": "^4.2.0",
