@@ -62,7 +62,8 @@ exports.uploadFile = async (req, res) => {
 // ─── GET /api/files ───────────────────────────────────────────────
 exports.getMyFiles = async (req, res) => {
   try {
-    const files = await File.find({ userId: req.user.id }).sort({ createdAt: -1 });
+    const files = await File.find({ userId: req.user.id });
+    files.sort((a, b) => b.createdAt - a.createdAt);
     res.json({ files });
   } catch (err) {
     console.error('GetMyFiles error:', err);
@@ -79,7 +80,8 @@ exports.searchFiles = async (req, res) => {
     const files = await File.find({
       userId: req.user.id,
       originalName: { $regex: q, $options: 'i' },
-    }).sort({ createdAt: -1 });
+    });
+    files.sort((a, b) => b.createdAt - a.createdAt);
 
     res.json({ files });
   } catch (err) {
